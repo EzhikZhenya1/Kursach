@@ -5,17 +5,16 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
-//txtparser
-public class ParserTXT {
+public class TXTParser {
     //удалить
     public static void main(String[] args) throws IOException {
         //File file = new File("C:\\Users\\zheny\\OneDrive\\Рабочий стол\\Best.txt");
         String file = "C:\\Users\\zheny\\OneDrive\\Рабочий стол\\Test.txt";
-        ParserTXT parser = new ParserTXT(file);
+        TXTParser parser = new TXTParser(file);
         parser.processLineByLine();
     }
 
-    public ParserTXT(String fileName) {
+    public TXTParser(String fileName) {
         filePath = Paths.get(fileName);
     }
 
