@@ -12,6 +12,8 @@ public class TXTParser {
         String file = "C:\\Users\\zheny\\OneDrive\\Рабочий стол\\Test.txt";
         TXTParser parser = new TXTParser(file);
         parser.processLineByLine();
+        AreaCalculation areaCalculation = new AreaCalculation();
+        areaCalculation.main();
     }
 
     public TXTParser(String fileName) {
