@@ -6,14 +6,13 @@ import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class TXTParser {
-    //удалить
+
     public static void main(String[] args) throws IOException {
-        //File file = new File("C:\\Users\\zheny\\OneDrive\\Рабочий стол\\Best.txt");
         String file = "C:\\Users\\zheny\\OneDrive\\Рабочий стол\\Test.txt";
         TXTParser parser = new TXTParser(file);
         parser.processLineByLine();
-        AreaCalculation areaCalculation = new AreaCalculation();
-        areaCalculation.main();
+        AreaCalculator areaCalculator = new AreaCalculator();
+        areaCalculator.calculate();
     }
 
     public TXTParser(String fileName) {
