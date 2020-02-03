@@ -1,7 +1,12 @@
 package Factory;
 
+import Impl.Circle;
+import Impl.Rectangle;
+import Impl.Square;
+import Impl.Triangle;
+
 public class CalculatorFactory {
-    public Calculatable getFigure(FigureTypes type){
+    public Calculatable getFigure(FigureTypes type) throws TypeFigureException {
         Calculatable toReturn = null;
         switch (type){
             case SQUARE:
@@ -17,7 +22,7 @@ public class CalculatorFactory {
                 toReturn = new Triangle();
                 break;
             default:
-                throw new IllegalArgumentException("Wrong figure type!");
+                throw new TypeFigureException("Illigal type ", type);
         }
         return toReturn;
     }

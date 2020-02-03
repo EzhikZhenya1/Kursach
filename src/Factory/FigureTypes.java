@@ -4,5 +4,6 @@ public enum FigureTypes {
     SQUARE,
     RECTANGLE,
     CIRCLE,
-    TRIANGLE
+    TRIANGLE,
+    LIL
 }

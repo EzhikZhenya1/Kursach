@@ -1,4 +1,6 @@
-package Factory;
+package Impl;
+
+import Factory.Calculatable;
 
 import java.io.BufferedReader;
 import java.io.IOException;
