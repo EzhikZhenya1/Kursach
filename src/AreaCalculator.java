@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class AreaCalculator {
-    public void calculate() throws NumberFormatException, IOException {
+    public void callMethodsCalculate() throws NumberFormatException, IOException {
 
         String c1 = "square";
         String c2 = "rectangle";

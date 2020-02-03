@@ -12,7 +12,7 @@ public class TXTParser {
         TXTParser parser = new TXTParser(file);
         parser.processLineByLine();
         AreaCalculator areaCalculator = new AreaCalculator();
-        areaCalculator.calculate();
+        areaCalculator.callMethodsCalculate();
     }
 
     public TXTParser(String fileName) {
