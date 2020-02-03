@@ -1,11 +1,11 @@
+import Factory.*;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class AreaCalculator {
     public void calculate() throws NumberFormatException, IOException {
-
-        MethodsForArea area = new MethodsForArea();
 
         String c1 = "square";
         String c2 = "rectangle";
@@ -19,11 +19,19 @@ public class AreaCalculator {
         line(c5, c3, ch, "3");
         line(c5, c4, ch, "4");
 
+
+        CalculatorFactory calculatorFactory = new CalculatorFactory();
+        Calculatable square = calculatorFactory.getFigure(FigureTypes.SQUARE);
+        Calculatable rectangle = calculatorFactory.getFigure(FigureTypes.RECTANGLE);
+        Calculatable circle = calculatorFactory.getFigure(FigureTypes.CIRCLE);
+        Calculatable triangle = calculatorFactory.getFigure(FigureTypes.TRIANGLE);
+
+        int i = 0;
         InputStreamReader isr = new InputStreamReader(System.in);
         BufferedReader br = new BufferedReader(isr);
-        int i = 0;
+        String number = br.readLine();
         try {
-            i = Integer.parseInt(bufferedReaderReadLine(br));
+            i = Integer.parseInt(number);
         } catch (NumberFormatException nfe) {
             System.out.println("It's bad =(");
             System.exit(0);
@@ -33,54 +41,23 @@ public class AreaCalculator {
             System.exit(0);
         }
 
-        double radius;
-        double length;
-        double width;
-        double height;
-        double perimeter;
-        double pi = Math.PI;
-
         switch (i) {
             case 1:
-                BufferedReader br1 = new BufferedReader(isr);
-                System.out.println("Enter length square");
-                length = Double.parseDouble(bufferedReaderReadLine(br1));
-                double square = area.calculateArea(length);
-                System.out.printf("rezalt %f\n", square);
+                square.calculate();
+                break;
             case 2:
-                BufferedReader br2 = new BufferedReader(isr);
-                System.out.println("Enter length rectangle");
-                length = Double.parseDouble(bufferedReaderReadLine(br2));
-                BufferedReader br3 = new BufferedReader(isr);
-                width = Double.parseDouble(bufferedReaderReadLine(br3));
-                double rectangle = area.calculateArea(length, width);
-                System.out.printf("rezalt %f\n", rectangle);
+                rectangle.calculate();
+                break;
             case 3:
-                BufferedReader br4 = new BufferedReader(isr);
-                System.out.println("Enter circle's radius");
-                radius = Double.parseDouble(bufferedReaderReadLine(br4));
-                double r1 = radius;
-                double circle = area.calculateArea(pi, radius, r1);
-                System.out.printf("rezalt %f\n", circle);
+                circle.calculate();
+                break;
             case 4:
-                System.out.println("Enter length three sides of triangle");
-                BufferedReader br6 = new BufferedReader(isr);
-                length = Double.parseDouble(bufferedReaderReadLine(br6));
-                BufferedReader br7 = new BufferedReader(isr);
-                width = Double.parseDouble(bufferedReaderReadLine(br7));
-                BufferedReader br8 = new BufferedReader(isr);
-                height = Double.parseDouble(bufferedReaderReadLine(br8));
-                perimeter = 0.5 * (length + width + height);
-                double triangle = area.calculateArea(perimeter, length, width, height);
-                System.out.printf("rezalt %f\n", triangle);
+                triangle.calculate();
+                break;
         }
     }
 
     private void line(String line1, String line2, String line3, String number) {
         System.out.printf("%s %s, %s %s\n", line1, line2, line3, number);
-    }
-
-    private static String bufferedReaderReadLine(BufferedReader br) throws IOException {
-        return br.readLine();
     }
 }
