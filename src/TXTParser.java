@@ -9,8 +9,9 @@ import java.util.Scanner;
 
 public class TXTParser {
 
+    public static String file = "C:\\Users\\zheny\\OneDrive\\Рабочий стол\\Test.txt";
+
     public static void main(String[] args) throws IOException {
-        String file = "C:\\Users\\zheny\\OneDrive\\Рабочий стол\\Test.txt";
         TXTParser parser = new TXTParser(file);
         parser.processLineByLine();
         AreaCalculator areaCalculator = new AreaCalculator();

@@ -1,14 +1,15 @@
 package Impl;
 
-import Factory.Calculatable;
+import Factory.ICalculator;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.HashMap;
 
-public class Square implements Calculatable {
+public class Square implements ICalculator {
     @Override
-    public void calculate() {
+    public void calculate(HashMap<Object, Object> map) {
         double length;
 
         InputStreamReader isr = new InputStreamReader(System.in);
@@ -18,8 +19,9 @@ public class Square implements Calculatable {
         try {
             length = Double.parseDouble(br.readLine());
             double square = calculateArea(length);
+            map.put(2, length);
             System.out.printf("rezalt %f\n", square);
-            System.out.println("square");
+            map.put(3, square);
         } catch (IOException e) {
             e.printStackTrace();
         }

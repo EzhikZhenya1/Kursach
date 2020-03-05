@@ -6,8 +6,8 @@ import Impl.Square;
 import Impl.Triangle;
 
 public class CalculatorFactory {
-    public Calculatable getFigure(FigureTypes type) throws TypeFigureException {
-        Calculatable toReturn = null;
+    public ICalculator getFigure(FigureTypes type) throws TypeFigureException {
+        ICalculator toReturn;
         switch (type){
             case SQUARE:
                 toReturn = new Square();

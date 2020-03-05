@@ -1,14 +1,15 @@
 package Impl;
 
-import Factory.Calculatable;
+import Factory.ICalculator;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.HashMap;
 
-public class Rectangle implements Calculatable {
+public class Rectangle implements ICalculator {
     @Override
-    public void calculate() {
+    public void calculate(HashMap<Object, Object> map) {
         double length;
         double width;
 
@@ -17,9 +18,12 @@ public class Rectangle implements Calculatable {
             BufferedReader brLength = new BufferedReader(isr);
             System.out.println("Enter length and width rectangle");
             length = Double.parseDouble(bufferedReaderReadLine(brLength));
+            map.put(2, length);
             BufferedReader brWidth = new BufferedReader(isr);
             width = Double.parseDouble(bufferedReaderReadLine(brWidth));
+            map.put(3, width);
             double square = calculateArea(length, width);
+            map.put(4, square);
             System.out.printf("rezalt %f\n", square);
         } catch (IOException e) {
             e.printStackTrace();
