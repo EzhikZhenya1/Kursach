@@ -1,18 +1,23 @@
+import Factory.AreaCalculator;
+
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class TXTParser {
 
+    public static String file = "C:\\Users\\zheny\\OneDrive\\Рабочий стол\\Test.txt";
+
     public static void main(String[] args) throws IOException {
-        String file = "C:\\Users\\zheny\\OneDrive\\Рабочий стол\\Test.txt";
         TXTParser parser = new TXTParser(file);
         parser.processLineByLine();
         AreaCalculator areaCalculator = new AreaCalculator();
-        areaCalculator.calculate();
+        HashMap<Object, Object> forFile = new HashMap<>();
+        areaCalculator.callMethodsCalculate(forFile);
     }
 
     public TXTParser(String fileName) {
