@@ -5,6 +5,7 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class TXTParser {
@@ -15,7 +16,8 @@ public class TXTParser {
         TXTParser parser = new TXTParser(file);
         parser.processLineByLine();
         AreaCalculator areaCalculator = new AreaCalculator();
-        areaCalculator.callMethodsCalculate();
+        HashMap<Object, Object> forFile = new HashMap<>();
+        areaCalculator.callMethodsCalculate(forFile);
     }
 
     public TXTParser(String fileName) {

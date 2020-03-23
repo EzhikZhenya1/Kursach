@@ -21,17 +21,17 @@ public class Triangle implements ICalculator {
             System.out.println("Enter length three sides of triangle");
             BufferedReader brFirst = new BufferedReader(isr);
             first = Double.parseDouble(bufferedReaderReadLine(brFirst));
-            map.put(2, first);
+            map.put("firstSideOfTheTriangle", first);
             BufferedReader brSecond = new BufferedReader(isr);
             second = Double.parseDouble(bufferedReaderReadLine(brSecond));
-            map.put(3, second);
+            map.put("secondSideOfTheTriangle", second);
             BufferedReader brThird = new BufferedReader(isr);
             third = Double.parseDouble(bufferedReaderReadLine(brThird));
-            map.put(4, third);
+            map.put("thirdSideOfTheTriangle", third);
             perimeter = 0.5 * (first + second + third);
-            map.put(5, perimeter);
+            map.put("perimetrTriangle", perimeter);
             double square = calculateArea(perimeter, first, second, third);
-            map.put(6, square);
+            map.put("areaTriangle", square);
             System.out.printf("rezalt %f\n", square);
 
         } catch (IOException e) {

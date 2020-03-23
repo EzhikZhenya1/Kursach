@@ -19,9 +19,9 @@ public class Circle implements ICalculator {
             BufferedReader brRadius = new BufferedReader(isr);
             System.out.println("Enter circle's radius");
             radius = Double.parseDouble(bufferedReaderReadLine(brRadius));
-            map.put(2, radius);
+            map.put("radiusOfTheCircle", radius);
             double circle = calculateArea(pi, radius);
-            map.put(3, circle);
+            map.put("areaCircle", circle);
             System.out.printf("rezalt %f\n", circle);
         } catch (IOException e) {
             e.printStackTrace();

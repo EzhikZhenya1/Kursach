@@ -18,12 +18,12 @@ public class Rectangle implements ICalculator {
             BufferedReader brLength = new BufferedReader(isr);
             System.out.println("Enter length and width rectangle");
             length = Double.parseDouble(bufferedReaderReadLine(brLength));
-            map.put(2, length);
+            map.put("lengthOfTheRectangle", length);
             BufferedReader brWidth = new BufferedReader(isr);
             width = Double.parseDouble(bufferedReaderReadLine(brWidth));
-            map.put(3, width);
+            map.put("widthOfTheRectangle", width);
             double square = calculateArea(length, width);
-            map.put(4, square);
+            map.put("areaRectangle", square);
             System.out.printf("rezalt %f\n", square);
         } catch (IOException e) {
             e.printStackTrace();

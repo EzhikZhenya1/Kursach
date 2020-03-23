@@ -19,9 +19,9 @@ public class Square implements ICalculator {
         try {
             length = Double.parseDouble(br.readLine());
             double square = calculateArea(length);
-            map.put(2, length);
+            map.put("lengthOfTheSquare", length);
             System.out.printf("rezalt %f\n", square);
-            map.put(3, square);
+            map.put("areaSquare", square);
         } catch (IOException e) {
             e.printStackTrace();
         }

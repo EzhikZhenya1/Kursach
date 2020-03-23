@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 
 public class AreaCalculator {
-    public void callMethodsCalculate() throws NumberFormatException, IOException {
+    public void callMethodsCalculate(HashMap<Object, Object> forFile) throws NumberFormatException, IOException {
 
         String c1 = "square";
         String c2 = "rectangle";
@@ -37,32 +37,28 @@ public class AreaCalculator {
             System.exit(0);
         }
 
-        HashMap<Object, Object> myMap = new HashMap<>();
-
         try {
             ICalculator square = calculatorFactory.getFigure(FigureTypes.SQUARE);
             ICalculator rectangle = calculatorFactory.getFigure(FigureTypes.RECTANGLE);
             ICalculator circle = calculatorFactory.getFigure(FigureTypes.CIRCLE);
             ICalculator triangle = calculatorFactory.getFigure(FigureTypes.TRIANGLE);
 
-
-
             switch (i) {
                 case 1:
-                    myMap.put("type", "square");
-                    square.calculate(myMap);
+                    forFile.put("type", "square");
+                    square.calculate(forFile);
                     break;
                 case 2:
-                    myMap.put("type", "rectangle");
-                    rectangle.calculate(myMap);
+                    forFile.put("type", "rectangle");
+                    rectangle.calculate(forFile);
                     break;
                 case 3:
-                    myMap.put("type", "circle");
-                    circle.calculate(myMap);
+                    forFile.put("type", "circle");
+                    circle.calculate(forFile);
                     break;
                 case 4:
-                    myMap.put("type", "triangle");
-                    triangle.calculate(myMap);
+                    forFile.put("type", "triangle");
+                    triangle.calculate(forFile);
                     break;
             }
         } catch (TypeFigureException ex){
